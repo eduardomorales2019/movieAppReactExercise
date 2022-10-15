@@ -1,7 +1,11 @@
 import React, { useContext, useEffect, useState } from "react";
 
-// api endpoint
+// 0.api endpoint
+// we export because we will use to look for a spaceial movies.
+// and i must write thhe process.env and the name in the link so we can get acesss with our id. and in the mommento of upload the repository the personal key will not be available
 
+export const API_ENDPOINT = `https://www.omdbapi.com/?apikey=${process.env.REACT_APP_MOVIE_API_KEY}`;
+console.log(API_ENDPOINT);
 //1. create context. watch out not usecontext  at the botton..
 
 const AppContext = React.createContext();
