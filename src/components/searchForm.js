@@ -1,5 +1,7 @@
 import React from "react";
 
-export const SearchForm = () => {
-  return <div>SearchForm</div>;
+const SearchForm = () => {
+  return <div>searchForm</div>;
 };
+
+export default SearchForm;

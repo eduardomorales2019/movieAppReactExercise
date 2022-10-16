@@ -2,6 +2,7 @@ import "./index.css";
 import { Route, Routes } from "react-router-dom";
 import SingleMovie from "./components/SingleMovie";
 import Home from "./components/home";
+import Movies from "./components/movies";
 
 function App() {
   return (
