@@ -35,6 +35,15 @@ const AppProvider = ({ children }) => {
       // AXIOS----
       const { data } = await axios(url);
       console.log(data, "soy data ");
+      // IMPOTANT-. TO SET THE FUNCTIONALLITY WE MUST SET THE LOGIC FOR GET THE ARRAY RESPONSE AND CHECK THE CAPITALICE WORDS.
+
+      if (data.Response === "True") {
+        setMovies(data.Search);
+        setError({ show: false, msg: "" });
+        setLoading(false);
+      } else {
+        setError({ show: true, msg: data.Error });
+      }
 
       //--- FETCH(con fech no pude mostrar en consola. )
 
@@ -51,10 +60,10 @@ const AppProvider = ({ children }) => {
     fetchMovies(`${API_ENDPOINT}&s=${querry}`);
   }, [querry]);
 
-  //www.omdbapi.com/?apikey=eff07290&s=batman (( guia pata ver el erro. ))
-
-  https: return (
-    <AppContext.Provider value="hellooo">{children} </AppContext.Provider>
+  return (
+    <AppContext.Provider value={{ loading, error, movies, querry, setQuerry }}>
+      {children}{" "}
+    </AppContext.Provider>
   );
 };
 
