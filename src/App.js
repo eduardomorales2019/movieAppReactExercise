@@ -1,9 +1,15 @@
 import "./index.css";
+import { Route, Routes } from "react-router-dom";
+import SingleMovie from "./components/SingleMovie";
+import Home from "./components/home";
 
 function App() {
   return (
     <div>
-      <h1>MovieApp</h1>
+      <Routes>
+        <Route exact path="/" element={<Home />} />
+        <Route path="/movies/:id" element={<SingleMovie />}></Route>
+      </Routes>
     </div>
   );
 }

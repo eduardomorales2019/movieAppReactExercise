@@ -1,5 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 
+// --CONTEXT. WE SET HERE ALL STATES SO WE CAN USE IT IN OTHER COMPONENTS.
+
 // 0.api endpoint
 // we export because we will use to look for a spaceial movies.
 // and i must write thhe process.env and the name in the link so we can get acesss with our id. and in the mommento of upload the repository the personal key will not be available
@@ -21,7 +23,7 @@ const AppProvider = ({ children }) => {
 
 // CREATE PERSONAL   HOOK.
 //3.1 Here we can use the usecontext now... and grab the Appcontext into it.
-export const GlobalContext = () => {
+export const useGlobalContext = () => {
   return useContext(AppContext);
 };
 
