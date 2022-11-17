@@ -54,7 +54,7 @@ const AppProvider = ({ children }) => {
       console.log(error);
     }
   };
-  // always set querry in the array dependency cause i want to fetchdata every singletme when i type something in the input
+  // !always set querry in the array dependency cause i want to fetchdata every singletme when i type something in the input
   // ========================================================
   useEffect(() => {
     fetchMovies(`${API_ENDPOINT}&s=${querry}`);
