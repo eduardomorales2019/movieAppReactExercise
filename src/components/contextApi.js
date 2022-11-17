@@ -1,17 +1,17 @@
 import React, { useContext, useEffect, useState } from "react";
 import axios from "axios";
-// --CONTEXT. WE SET HERE ALL STATES SO WE CAN USE IT IN OTHER COMPONENTS.
+//! --CONTEXT. WE SET HERE ALL STATES SO WE CAN USE IT IN OTHER COMPONENTS.
 
-// 0.api endpoint
-// we export because we will use to look for a spaceial movies.
-// and i must write thhe process.env and the name in the link so we can get acesss with our id. and in the mommento of upload the repository the personal key will not be available
+//! 0.api endpoint
+//! we export because we will use to look for a spaceial movies.
+//! and i must write thhe process.env and the name in the link so we can get acesss with our id. and in the mommento of upload the repository the personal key will not be available
 
 export const API_ENDPOINT = `https://www.omdbapi.com/?apikey=${process.env.REACT_APP_MOVIE_API_KEY}`;
 
 console.log(API_ENDPOINT);
 
 //
-//1. create context. watch out not usecontext  at the botton..
+//!1. create context. watch out not usecontext  at the botton..
 
 const AppContext = React.createContext();
 
@@ -24,18 +24,18 @@ const AppProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState({ show: "false", msg: "" });
   const [movies, setMovies] = useState([]);
-  const [querry, setQuerry] = useState("avengers");
+  const [querry, setQuerry] = useState("batman");
 
   // ========================================================
-  // fetchor axios recive a promise. ! always.
+  // !fetchor axios recive a promise. ! always.
   const fetchMovies = async (url) => {
-    // everytime I  invoke the function by default the loading must be true!
+    // !everytime I  invoke the function by default the loading must be true!
     setLoading(true);
     try {
-      // AXIOS----
+      // ! AXIOS----
       const { data } = await axios(url);
       console.log(data, "soy data ");
-      // IMPOTANT-. TO SET THE FUNCTIONALLITY WE MUST SET THE LOGIC FOR GET THE ARRAY RESPONSE AND CHECK THE CAPITALICE WORDS.
+      // ! IMPOTANT-. TO SET THE FUNCTIONALLITY WE MUST SET THE LOGIC FOR GET THE ARRAY RESPONSE AND CHECK THE CAPITALICE WORDS.
 
       if (data.Response === "True") {
         setMovies(data.Search);
