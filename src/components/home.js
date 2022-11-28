@@ -1,7 +1,7 @@
-import "../index.css";
-import React from "react";
-import Movies from "./movies";
-import SearchForm from "./searchForm";
+import "../index.css"
+import React from "react"
+import Movies from "./movies"
+import SearchForm from "./searchForm"
 
 const Home = () => {
   return (
@@ -9,7 +9,7 @@ const Home = () => {
       <Movies />
       <SearchForm />
     </div>
-  );
-};
+  )
+}
 
-export default Home;
+export default Home
